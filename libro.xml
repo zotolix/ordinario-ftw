@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+
+  <libro id="1" destacado="true" bestseller="true">
+    <titulo></titulo>
+    <autor></autor>
+    <genero></genero>
+    <precio></precio>               
+    <calificacion></calificacion>   
+    <resenas></resenas>           
+    <paginas></paginas>
+    <editorial></editorial>
+    <año></año>
+    <isbn></isbn>
+    <descripcion></descripcion>
+    <emoji></emoji>                  
+    <badge></badge>             
+  </libro>
+
+</libreria>
