@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Páginaverde - Librería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="toast" class="toast"></div>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <span class="nav-logo" onclick="showScreen('home')">📚 Páginaverde</span>
+  <div class="nav-links">
+    <button class="nav-btn active-nav" onclick="showScreen('home'); setNav(this)">Inicio</button>
+    <button class="nav-btn" onclick="showScreen('catalog'); setNav(this)">Catálogo</button>
+    <button class="nav-btn" onclick="showScreen('about'); setNav(this)">Nosotros</button>
+  </div>
+  <button class="cart-btn" onclick="showScreen('cart')">
+    🛒 <span id="cart-count">0</span>
+  </button>
+</nav>
+
+<!-- PANTALLA: INICIO -->
+<div id="screen-home" class="screen active">
+  <div class="hero">
+    <h1>Libros que<br><em>transforman</em> vidas</h1>
+    <p>Descubre tu próxima lectura favorita</p>
+    <div class="hero-search">
+      <input type="text" id="search-input" placeholder="Buscar por título, autor o género...">
+      <button onclick="showScreen('catalog')">Buscar</button>
+    </div>
+  </div>
+  <div class="section">
+    <div class="genre-pills" id="genre-pills-home"></div>
+    <p class="section-title">Novedades destacadas</p>
+    <!-- aquí se insertan las tarjetas de libros con JS -->
+    <div id="featured-grid"></div>
+  </div>
+  <div class="section" style="background: var(--card-bg); border-top: 1px solid var(--light-brown);">
+    <p class="section-title">Más vendidos</p>
+    <!-- aquí se insertan las tarjetas de libros con JS -->
+    <div id="bestseller-grid"></div>
+  </div>
+</div>
+
+<!-- PANTALLA: CATÁLOGO -->
+<div id="screen-catalog" class="screen">
+  <div class="section">
+    <h2 class="section-title">Catálogo completo</h2>
+    <div class="genre-pills" id="genre-pills-catalog"></div>
+    <!-- aquí se insertan las tarjetas de libros con JS -->
+    <div id="catalog-grid"></div>
+  </div>
+</div>
+
+<!-- PANTALLA: DETALLE -->
+<div id="screen-detail" class="screen">
+  <button class="detail-back" id="back-btn">← Volver</button>
+  <div class="detail-layout">
+    <div>
+      <div class="detail-cover-box" id="detail-cover"></div>
+    </div>
+    <div>
+      <div class="detail-meta" id="detail-meta"></div>
+      <h2 class="detail-title" id="detail-title"></h2>
+      <p class="detail-author" id="detail-author"></p>
+      <p class="detail-price" id="detail-price"></p>
+      <p class="detail-desc" id="detail-desc"></p>
+      <div class="detail-actions">
+        <button class="btn-primary" id="detail-add-btn">Agregar al carrito</button>
+        <button class="btn-secondary" onclick="showScreen('catalog')">Ver más libros</button>
+      </div>
+      <div class="detail-extra" id="detail-extra"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PANTALLA: CARRITO -->
+<div id="screen-cart" class="screen">
+  <div class="section">
+    <h2 class="section-title">Mi carrito</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary-box"></div>
+  </div>
+</div>
+
+<!-- PANTALLA: NOSOTROS -->
+<div id="screen-about" class="screen">
+  <div class="about-hero">
+    <h2>Nuestra historia</h2>
+    <p>Páginaverde nació en 2015 con la misión de acercar los mejores libros del mundo a cada lector.</p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card"><div class="value-icon">📖</div><h4>Pasión lectora</h4><p>Cada libro ha sido leído y recomendado por nuestro equipo.</p></div>
+    <div class="value-card"><div class="value-icon">🌿</div><h4>Envío sostenible</h4><p>Usamos empaques 100% reciclados.</p></div>
+    <div class="value-card"><div class="value-icon">⚡</div><h4>Entrega rápida</h4><p>Recibe tu pedido en 24–48 hrs en todo México.</p></div>
+    <div class="value-card"><div class="value-icon">🔒</div><h4>Compra segura</h4><p>Pagos cifrados y devolución en 30 días.</p></div>
+  </div>
+</div>
+
+<script>
+  function showScreen(name) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-' + name).classList.add('active');
+  }
+
+  function setNav(btn) {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+    btn.classList.add('active-nav');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', 2800);
+  }
+</script>
+
+</body>
+</html>
