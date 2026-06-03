@@ -255,4 +255,54 @@
       display: none;
       border-left: 3px solid var(--gold);
     }
- 
+
+.tabla-libros {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-libros th, .tabla-libros td {
+  background: var(--card-bg);
+  color: var(--gold);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  text-transform:uppercase;
+}
+
+.tabla-libros td {
+  padding:10px 14px;
+  border-bottom: 1px solid var(--light-brown);
+  vertical-align: medium;
+}
+
+.tabla-libros tr:hover td {
+  background: var(--light-brown);
+}
+
+.btn-ver {
+  background: var(--brown);
+  color:#fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 10px;
+  margin-right: 4x;
+}
+
+.btn-agregar {
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
