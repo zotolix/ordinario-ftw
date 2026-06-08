@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--SINTAXIS PARA COMENTARIOS
+  Estructura:
+  <comentario id="numero">
+    <nombre>Nombre de la persona</nombre>
+    <tipo>libro | mejora | error | otro</tipo>
+    <texto>Comentario o sugerencia escrita por el usuario</texto>
+    <fecha>YYYY-MM-DD</fecha>
+    <hora>HH:MM</hora>
+  </comentario>
+-->
+
+<comentarios>
+  <comentario id="1">
+    <nombre>Daniel Peña</nombre>
+    <tipo>libro</tipo>
+    <texto>Me gustaría que agregaran más libros de fantasía épica al catálogo.</texto>
+    <fecha>2026-06-08</fecha>
+    <hora>10:30</hora>
+  </comentario>
+
+  <comentario id="2">
+    <nombre>Axel Yebra</nombre>
+    <tipo>mejora</tipo>
+    <texto>La página se ve bien, pero sería útil agregar una sección de libros recomendados.</texto>
+    <fecha>2026-06-08</fecha>
+    <hora>11:15</hora>
+  </comentario>
+
+  <comentario id="3">
+    <nombre></nombre>
+    <tipo>otro</tipo>
+    <texto>Muy buena librería online para una demostración escolar.</texto>
+    <fecha>2026-06-08</fecha>
+    <hora>12:00</hora>
+  </comentario>
+</comentarios>
