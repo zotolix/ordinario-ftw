@@ -20,6 +20,7 @@
     <button class="nav-btn active-nav" onclick="showScreen('home'); setNav(this)">Inicio</button>
     <button class="nav-btn" onclick="showScreen('catalog'); setNav(this)">Catálogo</button>
     <button class="nav-btn" onclick="showScreen('about'); setNav(this)">Nosotros</button>
+    <button class="nav-btn" onclick="showScreen('suggestions'); setNav(this)">Sugerencias</button>
   </div>
   <button class="cart-btn" onclick="showScreen('cart')">
     🛒 <span id="cart-count">0</span>
@@ -92,7 +93,18 @@
 <div id="screen-login" class="screen">
   <div class="section auth-section">
     <h2 class="section-title">Acceso de usuario</h2>
-    <p class="auth-text">Para finalizar tu compra debes iniciar sesión o registrarte.</p>
+        <!-- Aviso de simulación -->
+    <div class="sim-notice">
+      <span class="sim-icon">ℹ️</span>
+      <div>
+        <strong>Simulación</strong>
+        <p>Esta es una demostración para el Proyecto. Los usuarios que escribas
+           <strong>no se guardan</strong> en ningún archivo XML ni base de datos.
+           Utiliza la cuenta de prueba para iniciar sesión.</p>
+           <p>User: daniel@gmail.com</p>
+           <p>Pass: 123456</p>
+      </div>
+    </div>
 
     <div class="auth-container">
       <div class="auth-card">
@@ -119,11 +131,76 @@
     <h2>Nuestra historia</h2>
     <p>Librería Online acerca los mejores libros del mundo a cada lector.</p>
   </div>
+
+  <!-- Sección fundador -->
+  <div class="section founder-section">
+    <h2 class="section-title">Fundador</h2>
+    <div class="founder-card">
+      <div class="founder-photo-wrap">
+        <img src="imagenes/fundador_web.png" alt="Fundador de Librería Online" class="founder-photo">
+      </div>
+      <div class="founder-info">
+        <h3 class="founder-name">Daniel Peña</h3>
+        <p class="founder-role">Fundador &amp; Desarrollador</p>
+        <p class="founder-bio">
+          Apasionado por la tecnología y la literatura, Daniel creó Librería Online con la visión
+          de acercar los mejores títulos a cada lector de México. Estudia desarrollo web y combina
+          su amor por los libros con la programación para construir experiencias digitales únicas.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div class="values-grid">
-    <div class="value-card"><div class="value-icon"></div><h4>Pasión lectora</h4><p>Cada libro ha sido leído y recomendado por nuestro equipo.</p></div>
-    <div class="value-card"><div class="value-icon"></div><h4>Envíos sostenibles</h4><p>Usamos empaques 100% reciclados.</p></div>
-    <div class="value-card"><div class="value-icon"></div><h4>Entrega rápida</h4><p>Recibe tu pedido en 24–48 hrs en todo México.</p></div>
-    <div class="value-card"><div class="value-icon"></div><h4>Compra segura</h4><p>Pagos cifrados y devolución en 30 días.</p></div>
+    <div class="value-card"><div class="value-icon">📖</div><h4>Pasión lectora</h4><p>Cada libro ha sido leído y recomendado por nuestro equipo.</p></div>
+    <div class="value-card"><div class="value-icon">🌿</div><h4>Envíos sostenibles</h4><p>Usamos empaques 100% reciclados.</p></div>
+    <div class="value-card"><div class="value-icon">⚡</div><h4>Entrega rápida</h4><p>Recibe tu pedido en 24–48 hrs en todo México.</p></div>
+    <div class="value-card"><div class="value-icon">🔒</div><h4>Compra segura</h4><p>Pagos cifrados y devolución en 30 días.</p></div>
+  </div>
+</div>
+
+
+<div id="screen-suggestions" class="screen">
+  <div class="section">
+    <h2 class="section-title">Sugerencias</h2>
+
+    <!-- Aviso de simulación -->
+    <div class="sim-notice">
+      <span class="sim-icon">ℹ️</span>
+      <div>
+        <strong>Simulación</strong>
+        <p>Esta es una demostración académica. Las sugerencias que escribas
+           <strong>no se guardan</strong> en ningún archivo XML ni base de datos.
+           Mensaje de prueba del archivo XML.</p>
+      </div>
+    </div>
+
+    <div class="suggestions-layout">
+
+      <!-- Formulario -->
+      <div class="suggestions-form-card">
+        <h3>Deja tu sugerencia</h3>
+        <input  type="text"     id="sug-nombre"    placeholder="Tu nombre (opcional)">
+        <select id="sug-tipo">
+          <option value="">— Tipo de sugerencia —</option>
+          <option value="libro">Recomendar un libro</option>
+          <option value="mejora">Mejora del sitio</option>
+          <option value="error">Reportar un error</option>
+          <option value="otro">Otro</option>
+        </select>
+        <textarea id="sug-texto" rows="4" placeholder="Escribe tu sugerencia aquí..."></textarea>
+        <button class="checkout-btn" onclick="enviarSugerencia()">Enviar sugerencia</button>
+      </div>
+
+      <!-- Lista de sugerencias enviadas -->
+      <div class="suggestions-list-wrap">
+        <h3>Sugerencias recibidas <span class="sug-count" id="sug-count">(0)</span></h3>
+        <div id="suggestions-list">
+          <p class="sug-empty">Aún no hay sugerencias. ¡Sé el primero!</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
