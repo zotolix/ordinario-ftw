@@ -14,6 +14,7 @@
     <isbn>978-0-06-088328-7</isbn>
     <descripcion>La saga de la familia Buendía a lo largo de siete generaciones en el pueblo mágico de Macondo. Una obra cumbre del realismo mágico latinoamericano.</descripcion>
     <badge>Clásico</badge>
+    <imagen>libro_01_Cien_años_de_soledad.png</imagen>
   </libro>
 
   <libro id="2" destacado="true" bestseller="false">
@@ -29,6 +30,7 @@
     <isbn>978-0-15-144647-6</isbn>
     <descripcion>Una investigación criminal en una abadía medieval del siglo XIV. Un monje franciscano deberá resolver una serie de misteriosas muertes en una biblioteca llena de secretos.</descripcion>
     <badge>Premio Strega</badge>
+    <imagen>libro_02_El_nombre_de_la_rosa.png</imagen>
   </libro>
 
   <libro id="3" destacado="false" bestseller="true">
@@ -44,6 +46,7 @@
     <isbn>978-0-06-231609-7</isbn>
     <descripcion>Un fascinante recorrido por la historia de la humanidad, desde la aparición del Homo sapiens hasta el presente.</descripcion>
     <badge>Best Seller</badge>
+    <imagen>libro_03_Sapiens.png</imagen>
   </libro>
 
   <libro id="4" destacado="true" bestseller="true">
@@ -59,6 +62,7 @@
     <isbn>978-84-08-01778-9</isbn>
     <descripcion>En la Barcelona de posguerra, el joven Daniel descubre en el Cementerio de los Libros Olvidados una novela de un autor misterioso.</descripcion>
     <badge>Favorito</badge>
+    <imagen>libro_04_La_sombra_del_viento.png</imagen>
   </libro>
 
   <libro id="5" destacado="false" bestseller="true">
@@ -74,6 +78,7 @@
     <isbn>978-0-7352-1129-2</isbn>
     <descripcion>Un sistema comprobado para construir buenos hábitos y eliminar los malos. Pequeños cambios producen resultados extraordinarios.</descripcion>
     <badge>Más vendido</badge>
+    <imagen>libro_05_Atomic_Habits.png</imagen>
   </libro>
 
   <libro id="6" destacado="true" bestseller="false">
@@ -89,6 +94,7 @@
     <isbn>978-84-206-1146-5</isbn>
     <descripcion>Una colección de cuentos magistrales que exploran laberintos, espejos, bibliotecas infinitas y mundos paralelos.</descripcion>
     <badge>Clásico</badge>
+    <imagen>libro_06_Ficciones.png</imagen>
   </libro>
 
   <libro id="7" destacado="false" bestseller="false">
@@ -104,6 +110,7 @@
     <isbn>978-84-9838-217-9</isbn>
     <descripcion>Una fábula poética sobre la amistad, el amor, la pérdida y los valores esenciales que los adultos olvidan.</descripcion>
     <badge>Icónico</badge>
+    <imagen>libro_07_El_principito.png</imagen>
   </libro>
 
   <libro id="8" destacado="true" bestseller="true">
@@ -119,6 +126,7 @@
     <isbn>978-0-452-28423-4</isbn>
     <descripcion>En un futuro totalitario, Winston Smith trabaja reescribiendo la historia. Una novela profética sobre el control y la vigilancia.</descripcion>
     <badge>Imprescindible</badge>
+    <imagen>libro_08_1984.png</imagen>
   </libro>
 
 </libreria>
