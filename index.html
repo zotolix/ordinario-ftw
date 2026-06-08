@@ -7,13 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- ✅ El script va al FINAL del body, no en el head -->
+
 </head>
 <body>
 
 <div id="toast" class="toast"></div>
 
-<!-- NAVEGACIÓN -->
+
 <nav>
   <span class="nav-logo" onclick="showScreen('home')">📚 Librería Online</span>
   <div class="nav-links">
@@ -26,7 +26,12 @@
   </button>
 </nav>
 
-<!-- PANTALLA: INICIO -->
+ <div class="nav-user">
+    <span id="user-info" class="user-info">Sin sesión</span>
+    <button id="auth-btn" class="auth-btn" onclick="showScreen('login')">Iniciar sesión</button>
+  </div>
+</nav>
+
 <div id="screen-home" class="screen active">
   <div class="hero">
     <h1>Libros que<br><em>transforman</em> vidas</h1>
@@ -47,7 +52,7 @@
   </div>
 </div>
 
-<!-- PANTALLA: CATÁLOGO -->
+
 <div id="screen-catalog" class="screen">
   <div class="section">
     <h2 class="section-title">Catálogo completo</h2>
@@ -56,7 +61,7 @@
   </div>
 </div>
 
-<!-- PANTALLA: DETALLE -->
+
 <div id="screen-detail" class="screen">
   <button class="detail-back" id="back-btn">← Volver</button>
   <div class="detail-layout">
@@ -75,7 +80,7 @@
   </div>
 </div>
 
-<!-- PANTALLA: CARRITO -->
+
 <div id="screen-cart" class="screen">
   <div class="section">
     <h2 class="section-title">Mi carrito</h2>
@@ -84,7 +89,31 @@
   </div>
 </div>
 
-<!-- PANTALLA: NOSOTROS -->
+<div id="screen-login" class="screen">
+  <div class="section auth-section">
+    <h2 class="section-title">Acceso de usuario</h2>
+    <p class="auth-text">Para finalizar tu compra debes iniciar sesión o registrarte.</p>
+
+    <div class="auth-container">
+      <div class="auth-card">
+        <h3>Iniciar sesión</h3>
+        <input type="email" id="login-email" placeholder="Correo electrónico">
+        <input type="password" id="login-password" placeholder="Contraseña">
+        <button class="checkout-btn" onclick="iniciarSesion()">Entrar</button>
+      </div>
+
+      <div class="auth-card">
+        <h3>Registrarse</h3>
+        <input type="text" id="register-name" placeholder="Nombre completo">
+        <input type="email" id="register-email" placeholder="Correo electrónico">
+        <input type="password" id="register-password" placeholder="Contraseña">
+        <button class="checkout-btn" onclick="registrarUsuario()">Crear cuenta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div id="screen-about" class="screen">
   <div class="about-hero">
     <h2>Nuestra historia</h2>
