@@ -554,3 +554,17 @@ catalogo-contenedor {
     justify-content: flex-start;
   }
 }
+/* ── PORTADA DE LIBRO (imagen real) ───────────────────────── */
+.libro-card-icono img {
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.18);
+}
+
+.detail-cover-box img {
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 260px;
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.2);
+}
