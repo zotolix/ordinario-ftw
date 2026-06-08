@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+  <usuario>
+    <nombre>Daniel Peña</nombre>
+    <correo>daniel@gmail.com</correo>
+    <password>12345</password>
+  </usuario>
+</usuarios>
