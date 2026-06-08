@@ -2,303 +2,123 @@
 <libreria>
 
   <libro id="1" destacado="true" bestseller="true">
-    <titulo>El Quijote</titulo>
-    <autor>Miguel de Cervantes</autor>
-    <genero>Novela</genero>
-    <precio>24.99</precio>               
-    <calificacion>4.8</calificacion>   
-    <resenas>1250</resenas>           
-    <paginas>864</paginas>
-    <editorial>Planeta</editorial>
-    <año>1605</año>
-    <isbn>978-8408001234</isbn>
-    <descripcion>La historia del ingeniero de la Mancha que se vuelve caballero andante.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="2" destacado="true" bestseller="true">
     <titulo>Cien años de soledad</titulo>
     <autor>Gabriel García Márquez</autor>
-    <genero>Realismo Mágico</genero>
-    <precio>18.99</precio>               
-    <calificacion>4.7</calificacion>   
-    <resenas>2100</resenas>           
-    <paginas>417</paginas>
-    <editorial>Sudamericana</editorial>
+    <genero>Realismo mágico</genero>
+    <precio>289</precio>
+    <calificacion>4.9</calificacion>
+    <resenas>12450</resenas>
+    <paginas>432</paginas>
+    <editorial>Random House</editorial>
     <año>1967</año>
-    <isbn>978-8402501238</isbn>
-    <descripcion>La saga de la familia Buendía en el pueblo de Macondo.</descripcion>                  
-    <badge>Bestseller</badge>             
+    <isbn>978-0-06-088328-7</isbn>
+    <descripcion>La saga de la familia Buendía a lo largo de siete generaciones en el pueblo mágico de Macondo. Una obra cumbre del realismo mágico latinoamericano.</descripcion>
+    <badge>Clásico</badge>
+  </libro>
+
+  <libro id="2" destacado="true" bestseller="false">
+    <titulo>El nombre de la rosa</titulo>
+    <autor>Umberto Eco</autor>
+    <genero>Misterio histórico</genero>
+    <precio>320</precio>
+    <calificacion>4.7</calificacion>
+    <resenas>8200</resenas>
+    <paginas>502</paginas>
+    <editorial>Lumen</editorial>
+    <año>1980</año>
+    <isbn>978-0-15-144647-6</isbn>
+    <descripcion>Una investigación criminal en una abadía medieval del siglo XIV. Un monje franciscano deberá resolver una serie de misteriosas muertes en una biblioteca llena de secretos.</descripcion>
+    <badge>Premio Strega</badge>
   </libro>
 
   <libro id="3" destacado="false" bestseller="true">
-    <titulo>El nombre del viento</titulo>
-    <autor>Patrick Rothfuss</autor>
-    <genero>Fantasía</genero>
-    <precio>19.99</precio>               
-    <calificacion>4.6</calificacion>   
-    <resenas>1850</resenas>           
-    <paginas>662</paginas>
-    <editorial>Ediciones B</editorial>
-    <año>2007</año>
-    <isbn>978-8466659451</isbn>
-    <descripcion>La historia del mago Kvothe y sus años en la Universidad.</descripcion>                  
-    <badge>Bestseller</badge>             
+    <titulo>Sapiens</titulo>
+    <autor>Yuval Noah Harari</autor>
+    <genero>No ficción</genero>
+    <precio>350</precio>
+    <calificacion>4.8</calificacion>
+    <resenas>25000</resenas>
+    <paginas>443</paginas>
+    <editorial>Debate</editorial>
+    <año>2011</año>
+    <isbn>978-0-06-231609-7</isbn>
+    <descripcion>Un fascinante recorrido por la historia de la humanidad, desde la aparición del Homo sapiens hasta el presente.</descripcion>
+    <badge>Best Seller</badge>
   </libro>
 
-  <libro id="4" destacado="true" bestseller="false">
-    <titulo>La casa de los espíritus</titulo>
-    <autor>Isabel Allende</autor>
-    <genero>Novela</genero>
-    <precio>17.99</precio>               
-    <calificacion>4.5</calificacion>   
-    <resenas>980</resenas>           
-    <paginas>568</paginas>
-    <editorial>Plaza & Janés</editorial>
-    <año>1982</año>
-    <isbn>978-8401401932</isbn>
-    <descripcion>La historia de varias generaciones de la familia Trueba en Chile.</descripcion>                  
-    <badge>Destacado</badge>             
-  </libro>
-
-  <libro id="5" destacado="false" bestseller="false">
-    <titulo>El código Da Vinci</titulo>
-    <autor>Dan Brown</autor>
-    <genero>Suspenso</genero>
-    <precio>16.99</precio>               
-    <calificacion>4.3</calificacion>   
-    <resenas>3200</resenas>           
-    <paginas>589</paginas>
+  <libro id="4" destacado="true" bestseller="true">
+    <titulo>La sombra del viento</titulo>
+    <autor>Carlos Ruiz Zafón</autor>
+    <genero>Misterio</genero>
+    <precio>295</precio>
+    <calificacion>4.8</calificacion>
+    <resenas>18300</resenas>
+    <paginas>570</paginas>
     <editorial>Planeta</editorial>
-    <año>2003</año>
-    <isbn>978-8408003237</isbn>
-    <descripcion>Un misterio que une el arte, la religión y la historia.</descripcion>                  
-    <badge>Popular</badge>             
+    <año>2001</año>
+    <isbn>978-84-08-01778-9</isbn>
+    <descripcion>En la Barcelona de posguerra, el joven Daniel descubre en el Cementerio de los Libros Olvidados una novela de un autor misterioso.</descripcion>
+    <badge>Favorito</badge>
   </libro>
 
-  <libro id="6" destacado="true" bestseller="true">
-    <titulo>Harry Potter y la piedra filosofal</titulo>
-    <autor>J.K. Rowling</autor>
-    <genero>Fantasía</genero>
-    <precio>15.99</precio>               
-    <calificacion>4.9</calificacion>   
-    <resenas>4500</resenas>           
-    <paginas>309</paginas>
-    <editorial>Salamandra</editorial>
-    <año>1997</año>
-    <isbn>978-8498385311</isbn>
-    <descripcion>El comienzo de la aventura mágica de Harry Potter en Hogwarts.</descripcion>                  
-    <badge>Bestseller</badge>             
+  <libro id="5" destacado="false" bestseller="true">
+    <titulo>Atomic Habits</titulo>
+    <autor>James Clear</autor>
+    <genero>Desarrollo personal</genero>
+    <precio>310</precio>
+    <calificacion>4.7</calificacion>
+    <resenas>32100</resenas>
+    <paginas>320</paginas>
+    <editorial>Avery</editorial>
+    <año>2018</año>
+    <isbn>978-0-7352-1129-2</isbn>
+    <descripcion>Un sistema comprobado para construir buenos hábitos y eliminar los malos. Pequeños cambios producen resultados extraordinarios.</descripcion>
+    <badge>Más vendido</badge>
   </libro>
 
-  <libro id="7" destacado="false" bestseller="true">
-    <titulo>Orgullo y prejuicio</titulo>
-    <autor>Jane Austen</autor>
-    <genero>Romance</genero>
-    <precio>12.99</precio>               
-    <calificacion>4.7</calificacion>   
-    <resenas>2300</resenas>           
-    <paginas>432</paginas>
-    <editorial>Penguin</editorial>
-    <año>1813</año>
-    <isbn>978-8432715778</isbn>
-    <descripcion>La historia de Elizabeth Bennet y su encuentro con el señor Darcy.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="8" destacado="false" bestseller="false">
-    <titulo>El alquimista</titulo>
-    <autor>Paulo Coelho</autor>
-    <genero>Ficción Inspiracional</genero>
-    <precio>14.99</precio>               
-    <calificacion>4.4</calificacion>   
-    <resenas>1650</resenas>           
+  <libro id="6" destacado="true" bestseller="false">
+    <titulo>Ficciones</titulo>
+    <autor>Jorge Luis Borges</autor>
+    <genero>Cuentos</genero>
+    <precio>245</precio>
+    <calificacion>4.9</calificacion>
+    <resenas>9800</resenas>
     <paginas>224</paginas>
-    <editorial>Planeta</editorial>
-    <año>1988</año>
-    <isbn>978-8408010456</isbn>
-    <descripcion>El viaje de Santiago en busca de su leyenda personal.</descripcion>                  
-    <badge>Inspiracional</badge>             
+    <editorial>Alianza</editorial>
+    <año>1944</año>
+    <isbn>978-84-206-1146-5</isbn>
+    <descripcion>Una colección de cuentos magistrales que exploran laberintos, espejos, bibliotecas infinitas y mundos paralelos.</descripcion>
+    <badge>Clásico</badge>
   </libro>
 
-  <libro id="9" destacado="true" bestseller="false">
+  <libro id="7" destacado="false" bestseller="false">
+    <titulo>El principito</titulo>
+    <autor>Antoine de Saint-Exupéry</autor>
+    <genero>Literatura infantil</genero>
+    <precio>195</precio>
+    <calificacion>4.9</calificacion>
+    <resenas>45000</resenas>
+    <paginas>96</paginas>
+    <editorial>Salamandra</editorial>
+    <año>1943</año>
+    <isbn>978-84-9838-217-9</isbn>
+    <descripcion>Una fábula poética sobre la amistad, el amor, la pérdida y los valores esenciales que los adultos olvidan.</descripcion>
+    <badge>Icónico</badge>
+  </libro>
+
+  <libro id="8" destacado="true" bestseller="true">
     <titulo>1984</titulo>
     <autor>George Orwell</autor>
     <genero>Distopía</genero>
-    <precio>16.99</precio>               
-    <calificacion>4.6</calificacion>   
-    <resenas>2800</resenas>           
-    <paginas>328</paginas>
-    <editorial>Siglo XXI</editorial>
+    <precio>275</precio>
+    <calificacion>4.8</calificacion>
+    <resenas>28700</resenas>
+    <paginas>336</paginas>
+    <editorial>Debolsillo</editorial>
     <año>1949</año>
-    <isbn>978-8432315336</isbn>
-    <descripcion>Un futuro totalitario donde la libertad es una ilusión.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="10" destacado="false" bestseller="true">
-    <titulo>El Señor de los Anillos</titulo>
-    <autor>J.R.R. Tolkien</autor>
-    <genero>Fantasía Épica</genero>
-    <precio>29.99</precio>               
-    <calificacion>4.8</calificacion>   
-    <resenas>3900</resenas>           
-    <paginas>1178</paginas>
-    <editorial>Minotauro</editorial>
-    <año>1954</año>
-    <isbn>978-8445007693</isbn>
-    <descripcion>La épica aventura de Frodo en la Tierra Media.</descripcion>                  
-    <badge>Bestseller</badge>             
-  </libro>
-
-  <libro id="11" destacado="false" bestseller="false">
-    <titulo>Mujercitas</titulo>
-    <autor>Louisa May Alcott</autor>
-    <genero>Novela Familiar</genero>
-    <precio>13.99</precio>               
-    <calificacion>4.5</calificacion>   
-    <resenas>1200</resenas>           
-    <paginas>448</paginas>
-    <editorial>Alianza Editorial</editorial>
-    <año>1869</año>
-    <isbn>978-8420682623</isbn>
-    <descripcion>Las aventuras de las hermanas March durante la Guerra Civil.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="12" destacado="true" bestseller="true">
-    <titulo>La culpa es de la gravedad</titulo>
-    <autor>John Green</autor>
-    <genero>Novela Juvenil</genero>
-    <precio>17.99</precio>               
-    <calificacion>4.6</calificacion>   
-    <resenas>2600</resenas>           
-    <paginas>313</paginas>
-    <editorial>Nube de Tinta</editorial>
-    <año>2012</año>
-    <isbn>978-8416003907</isbn>
-    <descripcion>Una historia de amor entre dos jóvenes con cáncer.</descripcion>                  
-    <badge>Bestseller</badge>             
-  </libro>
-
-  <libro id="13" destacado="false" bestseller="false">
-    <titulo>El mundo de Sofía</titulo>
-    <autor>Jostein Gaarder</autor>
-    <genero>Ficción Filosófica</genero>
-    <precio>19.99</precio>               
-    <calificacion>4.4</calificacion>   
-    <resenas>890</resenas>           
-    <paginas>480</paginas>
-    <editorial>Siruela</editorial>
-    <año>1991</año>
-    <isbn>978-8478301820</isbn>
-    <descripcion>Una introducción a la filosofía a través de la historia de una niña.</descripcion>                  
-    <badge>Educativo</badge>             
-  </libro>
-
-  <libro id="14" destacado="true" bestseller="false">
-    <titulo>La Odisea</titulo>
-    <autor>Homero</autor>
-    <genero>Épica Clásica</genero>
-    <precio>18.99</precio>               
-    <calificacion>4.7</calificacion>   
-    <resenas>1450</resenas>           
-    <paginas>528</paginas>
-    <editorial>Gredos</editorial>
-    <año>800</año>
-    <isbn>978-8424928469</isbn>
-    <descripcion>El largo viaje de Odiseo de regreso a Ítaca.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="15" destacado="false" bestseller="true">
-    <titulo>Crepúsculo</titulo>
-    <autor>Stephenie Meyer</autor>
-    <genero>Romance Paranormal</genero>
-    <precio>15.99</precio>               
-    <calificacion>4.2</calificacion>   
-    <resenas>3100</resenas>           
-    <paginas>498</paginas>
-    <editorial>Alfaguara</editorial>
-    <año>2005</año>
-    <isbn>978-8420409535</isbn>
-    <descripcion>La historia de amor entre Bella y Edward, un vampiro.</descripcion>                  
-    <badge>Bestseller</badge>             
-  </libro>
-
-  <libro id="16" destacado="false" bestseller="false">
-    <titulo>Matadero Cinco</titulo>
-    <autor>Kurt Vonnegut</autor>
-    <genero>Ficción Bélica</genero>
-    <precio>14.99</precio>               
-    <calificacion>4.5</calificacion>   
-    <resenas>1100</resenas>           
-    <paginas>280</paginas>
-    <editorial>Minotauro</editorial>
-    <año>1969</año>
-    <isbn>978-8445009285</isbn>
-    <descripcion>Las experiencias de Billy Pilgrim en la Segunda Guerra Mundial.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="17" destacado="true" bestseller="true">
-    <titulo>El proceso</titulo>
-    <autor>Franz Kafka</autor>
-    <genero>Novela Moderna</genero>
-    <precio>15.99</precio>               
-    <calificacion>4.6</calificacion>   
-    <resenas>980</resenas>           
-    <paginas>312</paginas>
-    <editorial>Alianza Editorial</editorial>
-    <año>1925</año>
-    <isbn>978-8420696676</isbn>
-    <descripcion>La pesadilla burocrática de Josef K ante la justicia.</descripcion>                  
-    <badge>Clásico</badge>             
-  </libro>
-
-  <libro id="18" destacado="false" bestseller="false">
-    <titulo>Dune</titulo>
-    <autor>Frank Herbert</autor>
-    <genero>Ciencia Ficción Épica</genero>
-    <precio>21.99</precio>               
-    <calificacion>4.7</calificacion>   
-    <resenas>2200</resenas>           
-    <paginas>688</paginas>
-    <editorial>Plenilunio</editorial>
-    <año>1965</año>
-    <isbn>978-8466624152</isbn>
-    <descripcion>La lucha por el control del planeta desértico Arrakis.</descripcion>                  
-    <badge>Ciencia Ficción</badge>             
-  </libro>
-
-  <libro id="19" destacado="false" bestseller="true">
-    <titulo>El Hobbit</titulo>
-    <autor>J.R.R. Tolkien</autor>
-    <genero>Fantasía</genero>
-    <precio>16.99</precio>               
-    <calificacion>4.8</calificacion>   
-    <resenas>2800</resenas>           
-    <paginas>310</paginas>
-    <editorial>Minotauro</editorial>
-    <año>1937</año>
-    <isbn>978-8445007631</isbn>
-    <descripcion>La aventura de Bilbo Bolsón en busca del tesoro.</descripcion>                  
-    <badge>Bestseller</badge>             
-  </libro>
-
-  <libro id="20" destacado="true" bestseller="false">
-    <titulo>Jane Eyre</titulo>
-    <autor>Charlotte Brontë</autor>
-    <genero>Novela Romántica</genero>
-    <precio>14.99</precio>               
-    <calificacion>4.7</calificacion>   
-    <resenas>1700</resenas>           
-    <paginas>496</paginas>
-    <editorial>Penguin</editorial>
-    <año>1847</año>
-    <isbn>978-8432714122</isbn>
-    <descripcion>La vida de Jane Eyre, una mujer independiente y fuerte.</descripcion>                  
-    <badge>Clásico</badge>             
+    <isbn>978-0-452-28423-4</isbn>
+    <descripcion>En un futuro totalitario, Winston Smith trabaja reescribiendo la historia. Una novela profética sobre el control y la vigilancia.</descripcion>
+    <badge>Imprescindible</badge>
   </libro>
 
 </libreria>

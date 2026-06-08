@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="javascript.js"></script>
+  <!-- ✅ El script va al FINAL del body, no en el head -->
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 
 <!-- NAVEGACIÓN -->
 <nav>
-  <span class="nav-logo" onclick="showScreen('home')"> Librería online</span>
+  <span class="nav-logo" onclick="showScreen('home')">📚 Librería Online</span>
   <div class="nav-links">
     <button class="nav-btn active-nav" onclick="showScreen('home'); setNav(this)">Inicio</button>
     <button class="nav-btn" onclick="showScreen('catalog'); setNav(this)">Catálogo</button>
@@ -33,18 +33,16 @@
     <p>Descubre tu próxima lectura favorita</p>
     <div class="hero-search">
       <input type="text" id="search-input" placeholder="Buscar por título, autor o género...">
-      <button onclick="showScreen('catalog')">Buscar</button>
+      <button onclick="showScreen('catalog'); setNavByName('Catálogo')">Buscar</button>
     </div>
   </div>
   <div class="section">
     <div class="genre-pills" id="genre-pills-home"></div>
     <p class="section-title">Novedades destacadas</p>
-    <!-- aquí se insertan las tarjetas de libros con JS -->
     <div id="feacture-grid"></div>
   </div>
   <div class="section" style="background: var(--card-bg); border-top: 1px solid var(--light-brown);">
     <p class="section-title">Más vendidos</p>
-    <!-- aquí se insertan las tarjetas de libros con JS -->
     <div id="bestseller-grid"></div>
   </div>
 </div>
@@ -54,7 +52,6 @@
   <div class="section">
     <h2 class="section-title">Catálogo completo</h2>
     <div class="genre-pills" id="genre-pills-catalog"></div>
-    <!-- aquí se insertan las tarjetas de libros con JS -->
     <div id="catalog-grid"></div>
   </div>
 </div>
@@ -68,15 +65,12 @@
     </div>
     <div>
       <div class="detail-meta" id="detail-meta"></div>
-      <h2 class="detail-title" id="detail-title"></h2>
-      <p class="detail-author" id="detail-author"></p>
-      <p class="detail-price" id="detail-price"></p>
+      <div id="detail-title"></div>
       <p class="detail-desc" id="detail-desc"></p>
       <div class="detail-actions">
         <button class="btn-primary" id="detail-add-btn">Agregar al carrito</button>
         <button class="btn-secondary" onclick="showScreen('catalog')">Ver más libros</button>
       </div>
-      <div class="detail-extra" id="detail-extra"></div>
     </div>
   </div>
 </div>
@@ -94,7 +88,7 @@
 <div id="screen-about" class="screen">
   <div class="about-hero">
     <h2>Nuestra historia</h2>
-    <p>Librería online acerca los mejores libros del mundo a cada lector.</p>
+    <p>Librería Online acerca los mejores libros del mundo a cada lector.</p>
   </div>
   <div class="values-grid">
     <div class="value-card"><div class="value-icon">📖</div><h4>Pasión lectora</h4><p>Cada libro ha sido leído y recomendado por nuestro equipo.</p></div>
@@ -104,8 +98,8 @@
   </div>
 </div>
 
-<script>
-</script>
+<!-- ✅ Script al final del body -->
+<script src="javascript.js"></script>
 
 </body>
 </html>
