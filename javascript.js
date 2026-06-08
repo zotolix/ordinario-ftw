@@ -23,6 +23,7 @@ function parsearXML(xml) {
       isbn        : get('isbn'),
       descripcion : get('descripcion'),
       badge       : get('badge'),
+      imagen      : get('imagen'),
     });
   });
 
@@ -317,7 +318,7 @@ function tarjetaLibro(libro) {
   return `
     <div class="libro-card" onclick="abrirDetalle('${libro.id}')">
       <div class="libro-card-icono">
-        ${svgLibro(trazo, fondo)}
+        ${portadaLibro(libro, 90, 120)}
         <span class="libro-card-badge">${libro.badge}</span>
       </div>
       <div class="libro-card-info">
@@ -385,7 +386,7 @@ function renderizarDetalle(id) {
 
   const { fondo, trazo } = coloresDelGenero(libro.genero);
 
-  document.getElementById('detail-cover').innerHTML = svgLibro(trazo, fondo);
+  document.getElementById('detail-cover').innerHTML = portadaLibro(libro, 180, 240);
 
   document.getElementById('detail-title').innerHTML = `
     <table class="tabla-detalle">
@@ -474,8 +475,10 @@ function renderizarCarrito() {
         ${carrito.map(item => `
           <tr>
             <td>
-              ${item.titulo}<br>
-              <small style="color:var(--muted)">${item.autor}</small>
+              <div style="display:flex;gap:10px;align-items:center">
+                <div style="flex-shrink:0">${portadaLibro(item,40,54)}</div>
+                <div>${item.titulo}<br><small style="color:var(--muted)">${item.autor}</small></div>
+              </div>
             </td>
             <td>$${item.precio}</td>
             <td>
@@ -523,4 +526,32 @@ function showToast(mensaje) {
   t.style.display = 'block';
   clearTimeout(t._timer);
   t._timer = setTimeout(() => t.style.display = 'none', 2800);
+}
+
+// ── PORTADA: imagen real o SVG de respaldo ──────────────────
+function portadaLibro(libro, ancho, alto) {
+  ancho = ancho || 90;
+  alto  = alto  || 120;
+  if (libro.imagen) {
+    return `<img
+      src="imagenes/${libro.imagen}"
+      alt="Portada de ${libro.titulo}"
+      width="${ancho}"
+      height="${alto}"
+      style="object-fit:cover; border-radius:6px; display:block;"
+      onerror="this.replaceWith(svgFallback('${libro.genero}',${ancho},${alto}))"
+    >`;
+  }
+  return svgFallbackHtml(libro.genero, ancho, alto);
+}
+
+function svgFallbackHtml(genero, ancho, alto) {
+  const el = document.createElement('div');
+  el.innerHTML = svgLibro(
+    coloresDelGenero(genero).trazo,
+    coloresDelGenero(genero).fondo
+  );
+  const svg = el.querySelector('svg');
+  if (svg) { svg.setAttribute('width', ancho); svg.setAttribute('height', alto); }
+  return el.innerHTML;
 }
