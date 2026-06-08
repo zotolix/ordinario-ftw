@@ -50,6 +50,7 @@ fetch('libro.xml')
   })
   .catch(error => console.error('Error cargando XML:', error));
 
+  cargarComentariosXML();
 
 function showScreen(nombre) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -58,6 +59,7 @@ function showScreen(nombre) {
   if (nombre === 'home')    { renderizarDestacados(); renderizarBestsellers(); }
   if (nombre === 'catalog') { renderizarCatalogo(); }
   if (nombre === 'cart')    { renderizarCarrito(); }
+  if (nombre === 'suggestions') { renderizarSugerencias(); }
 
   window.scrollTo(0, 0);
 }
@@ -566,7 +568,7 @@ function cargarComentariosXML() {
     })
     .catch(error => {
       console.error(error);
-      showToast('No se pudo leer comentarios.xml. Usa Live Server o un servidor local.');
+      showToast('No se pudo leer comentarios.xml');
     });
 }
 
