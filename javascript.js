@@ -1,7 +1,3 @@
-// ============================================================
-// PARSEO DEL XML
-// ============================================================
-
 function parsearXML(xml) {
   const parser = new DOMParser();
   const doc    = parser.parseFromString(xml, 'text/xml');
@@ -33,18 +29,12 @@ function parsearXML(xml) {
   return libros;
 }
 
-// ============================================================
-// ESTADO GLOBAL
-// ============================================================
 
 let todosLosLibros   = [];
 let carrito          = [];
 let generoActivo     = 'Todos';
 let pantallaAnterior = 'home';
 
-// ============================================================
-// CARGA DEL XML
-// ============================================================
 
 fetch('libro.xml')
   .then(response => response.text())
@@ -59,9 +49,6 @@ fetch('libro.xml')
   })
   .catch(error => console.error('Error cargando XML:', error));
 
-// ============================================================
-// NAVEGACIÓN
-// ============================================================
 
 function showScreen(nombre) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -92,9 +79,7 @@ function abrirDetalle(id) {
   showScreen('detail');
 }
 
-// ============================================================
-// GÉNEROS (pills)
-// ============================================================
+// Generos
 
 function renderizarGeneros(contenedorId) {
   const generos = ['Todos', ...new Set(todosLosLibros.map(l => l.genero))];
@@ -118,9 +103,7 @@ function filtrarGenero(genero) {
   renderizarCatalogo();
 }
 
-// ============================================================
-// SVG ICONO DE LIBRO
-// ============================================================
+//icono para todos los libros 
 
 function svgLibro(color, fondo) {
   color = color || '#1f2937';
@@ -165,9 +148,7 @@ function coloresDelGenero(genero) {
   return coloresPorGenero[genero] || { fondo: '#f3f4f6', trazo: '#1f2937' };
 }
 
-// ============================================================
-// TABLAS: cabecera y fila (Home)
-// ============================================================
+
 
 function cabeceraTabla() {
   return `
@@ -200,9 +181,7 @@ function filaTabla(libro) {
     </tr>`;
 }
 
-// ============================================================
-// HOME: destacados y bestsellers (tabla)
-// ============================================================
+//Destacados
 
 function renderizarDestacados() {
   const libros = generoActivo === 'Todos'
@@ -232,9 +211,7 @@ function renderizarBestsellers() {
     </table>`;
 }
 
-// ============================================================
-// CATÁLOGO: div con tarjetas y SVG
-// ============================================================
+//Catalogo
 
 function tarjetaLibro(libro) {
   const { fondo, trazo } = coloresDelGenero(libro.genero);
@@ -302,9 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (input) input.addEventListener('input', renderizarCatalogo);
 });
 
-// ============================================================
-// DETALLE
-// ============================================================
+//Detalle
 
 function renderizarDetalle(id) {
   const libro = todosLosLibros.find(l => l.id === id);
@@ -333,9 +308,7 @@ function renderizarDetalle(id) {
   document.getElementById('detail-add-btn').onclick = () => agregarAlCarrito(libro.id);
 }
 
-// ============================================================
-// CARRITO
-// ============================================================
+//Carrito
 
 function agregarAlCarrito(id) {
   const libro = todosLosLibros.find(l => l.id === id);
@@ -428,7 +401,7 @@ function renderizarCarrito() {
     <div class="cart-summary">
       <h3>Resumen del pedido</h3>
       <div class="summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
-      <div class="summary-row"><span>Envío</span><span>${envio === 0 ? 'Gratis 🎉' : '$' + envio}</span></div>
+      <div class="summary-row"><span>Envío</span><span>${envio === 0 ? 'Gratis ' : '$' + envio}</span></div>
       <div class="summary-total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
       <button class="checkout-btn" onclick="finalizarCompra()">Finalizar compra →</button>
     </div>`;
@@ -437,13 +410,10 @@ function renderizarCarrito() {
 function finalizarCompra() {
   carrito = [];
   actualizarContadorCarrito();
-  showToast('¡Compra realizada con éxito! 🎉');
+  showToast('¡Compra realizada con éxito!');
   showScreen('home');
 }
 
-// ============================================================
-// TOAST
-// ============================================================
 
 function showToast(mensaje) {
   const t = document.getElementById('toast');
