@@ -528,7 +528,6 @@ function showToast(mensaje) {
   t._timer = setTimeout(() => t.style.display = 'none', 2800);
 }
 
-// ── PORTADA: imagen real o SVG de respaldo ──────────────────
 function portadaLibro(libro, ancho, alto) {
   ancho = ancho || 90;
   alto  = alto  || 120;
@@ -554,4 +553,115 @@ function svgFallbackHtml(genero, ancho, alto) {
   const svg = el.querySelector('svg');
   if (svg) { svg.setAttribute('width', ancho); svg.setAttribute('height', alto); }
   return el.innerHTML;
+}
+
+let sugerencias = [];
+
+function cargarComentariosXML() {
+  fetch('comentarios.xml')
+    .then(response => response.text())
+    .then(xml => {
+      sugerencias = parsearComentariosXML(xml);
+      renderizarSugerencias();
+    })
+    .catch(error => {
+      console.error(error);
+      showToast('No se pudo leer comentarios.xml. Usa Live Server o un servidor local.');
+    });
+}
+
+function parsearComentariosXML(xml) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(xml, 'text/xml');
+  const nodos = doc.querySelectorAll('comentario');
+  const comentarios = [];
+
+  nodos.forEach(nodo => {
+    const get = tag => nodo.querySelector(tag)?.textContent.trim() ?? '';
+
+    comentarios.push({
+      id     : nodo.getAttribute('id') || '',
+      nombre : get('nombre') || 'Anónimo',
+      tipo   : get('tipo') || 'otro',
+      texto  : get('texto'),
+      fecha  : get('fecha') || '',
+      hora   : get('hora') || ''
+    });
+  });
+
+  return comentarios;
+}
+
+function enviarSugerencia() {
+  const nombre = document.getElementById('sug-nombre').value.trim();
+  const tipo   = document.getElementById('sug-tipo').value;
+  const texto  = document.getElementById('sug-texto').value.trim();
+
+  if (!texto) {
+    showToast('Escribe tu sugerencia antes de enviar.');
+    return;
+  }
+
+  const nueva = {
+    id     : 'simulada',
+    nombre : nombre || 'Anónimo',
+    tipo   : tipo || 'otro',
+    texto,
+    fecha  : new Date().toLocaleDateString('es-MX', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    }),
+    hora   : new Date().toLocaleTimeString('es-MX', {
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+  };
+
+  sugerencias.unshift(nueva);
+
+  document.getElementById('sug-nombre').value = '';
+  document.getElementById('sug-tipo').value = '';
+  document.getElementById('sug-texto').value = '';
+
+  renderizarSugerencias();
+
+  alert('Simulación de comentario.\n\nPara que este comentario quede guardado permanentemente, debes agregarlo manualmente dentro de comentarios.xml.');
+}
+
+const tipoLabel = {
+  libro  : '📚 Recomendar libro',
+  mejora : '✨ Mejora del sitio',
+  error  : '🐞 Reportar error',
+  otro   : '💬 Otro',
+};
+
+function renderizarSugerencias() {
+  const lista = document.getElementById('suggestions-list');
+  const count = document.getElementById('sug-count');
+
+  if (!lista || !count) return;
+
+  count.textContent = `(${sugerencias.length})`;
+
+  if (!sugerencias.length) {
+    lista.innerHTML = '<p class="sug-empty">Aún no hay comentarios en comentarios.xml.</p>';
+    return;
+  }
+
+  lista.innerHTML = sugerencias.map((s, i) => `
+    <div class="sug-card">
+      <div class="sug-card-header">
+        <span class="sug-autor">${s.nombre}</span>
+        <span class="sug-tipo-badge">${tipoLabel[s.tipo] || '💬 Otro'}</span>
+        <span class="sug-fecha">${s.fecha}${s.hora ? ' · ' + s.hora : ''}</span>
+      </div>
+      <p class="sug-texto">${s.texto}</p>
+      <button class="sug-delete" onclick="eliminarSugerencia(${i})">✕</button>
+    </div>`).join('');
+}
+
+function eliminarSugerencia(index) {
+  sugerencias.splice(index, 1);
+  renderizarSugerencias();
 }
