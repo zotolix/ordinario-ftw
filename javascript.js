@@ -79,6 +79,104 @@ function abrirDetalle(id) {
   showScreen('detail');
 }
 
+function actualizarEstadoUsuario() {
+  const userInfo = document.getElementById('user-info');
+  const authBtn = document.getElementById('auth-btn');
+
+  if (!userInfo || !authBtn) return;
+
+  if (usuarioActual) {
+    userInfo.textContent = 'Hola, ' + usuarioActual.nombre;
+    authBtn.textContent = 'Cerrar sesión';
+    authBtn.onclick = cerrarSesion;
+  } else {
+    userInfo.textContent = 'Sin sesión';
+    authBtn.textContent = 'Iniciar sesión';
+    authBtn.onclick = function() {
+      showScreen('login');
+    };
+  }
+}
+
+function parsearUsuariosXML(xml) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(xml, 'text/xml');
+  const nodos = doc.querySelectorAll('usuario');
+  const usuarios = [];
+
+  nodos.forEach(nodo => {
+    const get = tag => nodo.querySelector(tag)?.textContent.trim() ?? '';
+
+    usuarios.push({
+      nombre: get('nombre'),
+      correo: get('correo').toLowerCase(),
+      password: get('password')
+    });
+  });
+
+  return usuarios;
+}
+
+function registrarUsuario() {
+  alert('Simulación de registro. Para iniciar sesión usa el usuario creado en usuarios.xml:\n\nCorreo: daniel@gmail.com\nContraseña: 12345');
+
+  document.getElementById('register-name').value = '';
+  document.getElementById('register-email').value = '';
+  document.getElementById('register-password').value = '';
+}
+
+function iniciarSesion() {
+  const correo = document.getElementById('login-email').value.trim().toLowerCase();
+  const password = document.getElementById('login-password').value.trim();
+
+  if (!correo || !password) {
+    showToast('Ingresa correo y contraseña.');
+    return;
+  }
+
+  fetch('usuarios.xml')
+    .then(response => response.text())
+    .then(xml => {
+      const usuarios = parsearUsuariosXML(xml);
+
+      const usuario = usuarios.find(u =>
+        u.correo === correo && u.password === password
+      );
+
+      if (!usuario) {
+        showToast('El usuario no existe. Usa el usuario creado en usuarios.xml.');
+        return;
+      }
+
+      usuarioActual = {
+        nombre: usuario.nombre,
+        correo: usuario.correo
+      };
+
+      localStorage.setItem('usuarioActual', JSON.stringify(usuarioActual));
+      actualizarEstadoUsuario();
+
+      document.getElementById('login-email').value = '';
+      document.getElementById('login-password').value = '';
+
+      showToast('Sesión iniciada correctamente.');
+      showScreen('cart');
+    })
+    .catch(error => {
+      console.error(error);
+      showToast('No se pudo leer usuarios.xml. Usa Live Server o un servidor local.');
+    });
+}
+
+function cerrarSesion() {
+  usuarioActual = null;
+  localStorage.removeItem('usuarioActual');
+  actualizarEstadoUsuario();
+  showToast('Sesión cerrada.');
+  showScreen('home');
+}
+
+
 // Generos
 
 function renderizarGeneros(contenedorId) {
@@ -406,14 +504,18 @@ function renderizarCarrito() {
       <button class="checkout-btn" onclick="finalizarCompra()">Finalizar compra →</button>
     </div>`;
 }
-
 function finalizarCompra() {
+  if (!usuarioActual) {
+    showToast('Debes iniciar sesión o registrarte antes de pagar.');
+    showScreen('login');
+    return;
+  }
+
   carrito = [];
   actualizarContadorCarrito();
-  showToast('¡Compra realizada con éxito!');
+  showToast('¡Compra realizada con éxito! 🎉');
   showScreen('home');
 }
-
 
 function showToast(mensaje) {
   const t = document.getElementById('toast');
